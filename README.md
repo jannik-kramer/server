@@ -57,6 +57,30 @@ General server information.
 
 You can deploy your own localtunnel server using the prebuilt docker image.
 
+### Options
+
+```--port```: listen on this port for outside requests  
+_(default: 80)_
+
+```--address```: IP address to bind to  
+_(default: 0.0.0.0)_
+
+```--secure```: use this flag to indicate proxy over https  
+_(default: false)_
+
+```--domain```: Specify the base domain name. This is optional if hosting localtunnel from a regular example.com domain. This is required if hosting a localtunnel server from a subdomain (i.e. lt.example.dom where clients will be client-app.lt.example.come)
+
+```--max-sockets```: maximum number of tcp sockets each client is allowed to establish at one time (the tunnels)  
+_(default: 10)_
+
+```--client-min-port-range```: Port start range to use for localtunnel clients to connect to  
+_(default: 1024)_
+
+```--client-max-port-range```: Port end range to use for localtunnel clients to connect to  
+_(default: 65535)_
+
+### Example
+
 **Note** This assumes that you have a proxy in front of the server to handle the http(s) requests and forward them to the localtunnel server on port 3000. You can use our [localtunnel-nginx](https://github.com/localtunnel/nginx) to accomplish this.
 
 If you do not want ssl support for your own tunnel (not recommended), then you can just run the below with `--port 80` instead.
